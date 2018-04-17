@@ -11,13 +11,12 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<aspectj.version>1.6.11</aspectj.version>
-        <httpclient.version>4.5.3</httpclient.version>
-        <jackson.version>2.9.3</jackson.version>
+		<aspectj.version>1.9.0</aspectj.version>
+        <httpclient.version>4.5.5</httpclient.version>
+        <jackson.version>2.9.5</jackson.version>
 		<jdk.version>1.8</jdk.version>
-		<log4j2.version>2.7</log4j2.version>
-		<quartz.version>2.2.3</quartz.version>
-        <spring.version>5.0.2.RELEASE</spring.version>
+		<log4j2.version>2.11.0</log4j2.version>
+        <spring.version>5.0.5.RELEASE</spring.version>
 	</properties>
 
 	<build>
@@ -69,19 +68,25 @@
             <version>${aspectj.version}</version>
         </dependency>
         <dependency>
-            <groupId>commons-beanutils</groupId>
-            <artifactId>commons-beanutils</artifactId>
-            <version>1.9.2</version>
-        </dependency>
-        <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
-            <version>2.1_3</version>
+            <version>3.2.6</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.ant</groupId>
+                    <artifactId>ant</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.3</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.5</version>
+            <version>2.6</version>
         </dependency>
         <dependency>
             <groupId>commons-lang</groupId>
@@ -101,22 +106,22 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
-            <version>2.4.2</version>
+            <version>2.5.0</version>
         </dependency>
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
-            <version>1.3.2</version>
+            <version>1.3.3</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>1.0.15</version>
+            <version>1.1.9</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
-            <version>2.5.9</version>
+            <version>2.5.10</version>
             <exclusions>
                 <exclusion>
                     <groupId>log4j</groupId>
@@ -148,7 +153,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.21</version>
+            <version>1.2.47</version>
         </dependency>
         <dependency>
             <groupId>com.caucho</groupId>
@@ -231,19 +236,9 @@
             <version>4.1.22.Final</version>
         </dependency>
         <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz</artifactId>
-            <version>${quartz.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz-jobs</artifactId>
-            <version>${quartz.version}</version>
-        </dependency>
-        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <version>4.0.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -319,7 +314,7 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
-            <version>1.7.5.RELEASE</version>
+            <version>2.0.6.RELEASE</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.slf4j</groupId>
@@ -342,7 +337,7 @@
         <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session</artifactId>
-            <version>1.2.2.RELEASE</version>
+            <version>1.3.2.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>taglibs</groupId>
@@ -352,7 +347,7 @@
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
-            <version>1.1.0.Final</version>
+            <version>2.0.1.Final</version>
         </dependency>
         <dependency>
             <groupId>com.x</groupId>
@@ -391,7 +386,15 @@
 					<groupId>log4j</groupId>
 					<artifactId>log4j</artifactId>
 				</exclusion>
-			</exclusions>
+                <exclusion>
+                    <groupId>jline</groupId>
+                    <artifactId>jline</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.yetus</groupId>
+                    <artifactId>audience-annotations</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 	</dependencies>
 
